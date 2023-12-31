@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const operationInput = document.querySelector('.input-operation');
+          const calculatorButtons = document.querySelectorAll('.calc-button');
+
+          calculatorButtons.forEach(button => {
+              button.addEventListener('click', function () {
+                  operationInput.value += button.textContent;
+              });
+          });
+      });
+  </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora utilizando expresiones regulares de perl</h1>
+        <form action="cgi-bin/calculadora.cgi" method="POST">
+            <input type="text" name="op" placeholder="Ingrese su operaci&oacute;n" class="input-operation">
+            <input type="text" class="input-operation" name="rpta">
+            <div class="calculator-buttons">
+                <table>
+                    <tr>
+                        <td><button type="button" class="calc-button">7</button></td>
+                        <td><button type="button" class="calc-button">8</button></td>
+                        <td><button type="button" class="calc-button">9</button></td>
+                        <td><button type="button" class="calc-button operator">/</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="calc-button">4</button></td>
+                        <td><button type="button" class="calc-button">5</button></td>
+                        <td><button type="button" class="calc-button">6</button></td>
+                        <td><button type="button" class="calc-button operator">*</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="calc-button">1</button></td>
+                        <td><button type="button" class="calc-button">2</button></td>
+                        <td><button type="button" class="calc-button">3</button></td>
+                        <td><button type="button" class="calc-button operator">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="calc-button">0</button></td>
+                        <td><button type="button" class="calc-button">.</button></td>
+                        <td><button type="submit" class="calc-button operator">=</button></td>
+                        <td><button type="button" class="calc-button operator">+</button></td>
+                    </tr>
+                </table>
+            </div>
+            <input type="submit" value="Calcular" class="button">
+            <input type="reset" value="Limpiar" class="button">
+        </form>
+    </div>
+</body>
+</html>
